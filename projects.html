@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Projects | Anish Tirumala Venkata</title>
+  <meta name="description" content="All projects by Anish Tirumala Venkata across AI engineering, data science, backend development, and DevOps learning." />
+  <style>
+    :root {
+      --bg: #07140d;
+      --bg2: #0d1f15;
+      --panel: rgba(12, 27, 18, 0.82);
+      --text: #edf9f1;
+      --muted: #b9d5c2;
+      --accent: #4ade80;
+      --accent2: #22c55e;
+      --border: rgba(255,255,255,0.09);
+      --shadow: 0 24px 60px rgba(0,0,0,0.32);
+      --maxw: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(74,222,128,0.14), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container {
+      width: min(var(--maxw), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .nav {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(7,20,13,0.84);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.08rem;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+    }
+
+    h1 {
+      margin: 0 0 0.7rem;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    .section {
+      padding: 1rem 0 3rem;
+    }
+
+    .section h2 {
+      margin: 0 0 1rem;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 1.1rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.08rem;
+    }
+
+    .card .meta {
+      color: var(--accent2);
+      font-size: 0.92rem;
+      margin-bottom: 0.5rem;
+      font-weight: 650;
+    }
+
+    .card p {
+      margin: 0 0 0.8rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .card a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 1.5rem 0 2.2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 840px) {
+      .grid { grid-template-columns: 1fr; }
+      .nav-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">Anish<span>.ai</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Featured</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>All Projects</h1>
+      <p>
+        A broader view of my work across AI engineering, data science, backend systems, and DevOps-related learning.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2>Additional Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Airline Demand Forecasting</h3>
+          <div class="meta">Time-Series Forecasting</div>
+          <p>Forecasting workflow using statistical and ML models for airline passenger demand, packaged into an interactive interface.</p>
+          <a href="https://github.com/TVANISH002/airline-demand-forecasting" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Customer Churn Analysis</h3>
+          <div class="meta">ANN-Based Classification</div>
+          <p>End-to-end churn prediction workflow with preprocessing, modeling, and reproducible inference setup.</p>
+          <a href="https://github.com/TVANISH002/customer-churn-analysis" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>IMDb Sentiment Analysis</h3>
+          <div class="meta">NLP / Sequence Modeling</div>
+          <p>Sentiment analysis project exploring SimpleRNN-based text classification and trade-offs in basic sequence models.</p>
+          <a href="https://github.com/TVANISH002/imdb-sentiment-analysis" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Weather API Backend</h3>
+          <div class="meta">FastAPI Backend</div>
+          <p>Backend weather application with API integration, CRUD operations, SQLite persistence, and export functionality.</p>
+          <a href="https://github.com/TVANISH002/weather-api-backend-pma" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>FastAPI E-commerce Backend</h3>
+          <div class="meta">Backend Development</div>
+          <p>Backend application built with FastAPI and connected to a lightweight UI flow for showcasing API-driven features.</p>
+          <a href="https://github.com/TVANISH002/fastapi-ecommerce" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Business Insights 360</h3>
+          <div class="meta">Power BI / Analytics</div>
+          <p>Business intelligence project focused on dashboarding, reporting, and translating data into decision-friendly insights.</p>
+          <a href="https://github.com/TVANISH002/Business-Insights-360_Power-Bi" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>EC2 Creation with Terraform</h3>
+          <div class="meta">Infrastructure as Code</div>
+          <p>Terraform-based infrastructure setup for provisioning EC2 resources and learning cloud automation fundamentals.</p>
+          <a href="https://github.com/TVANISH002/EC2-Creation-with-terraform" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Auto Deploy Tool</h3>
+          <div class="meta">Shell / Automation</div>
+          <p>Automation-oriented shell tooling exploring deployment workflows and scripting basics for engineering productivity.</p>
+          <a href="https://github.com/TVANISH002/auto-deploy-tool" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Network Security</h3>
+          <div class="meta">Security / Classification</div>
+          <p>Phishing website prediction project applying ML classification to a cybersecurity-flavored dataset.</p>
+          <a href="https://github.com/TVANISH002/networksecurity" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Data Science Learning Lab</h3>
+          <div class="meta">Applied Learning</div>
+          <p>Hands-on repository exploring EDA, preprocessing, and foundational machine learning workflows on real datasets.</p>
+          <a href="https://github.com/TVANISH002/data-science-learning-lab" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Global Countries EDA</h3>
+          <div class="meta">EDA</div>
+          <p>Exploratory analysis project using Python and Pandas to study country-level datasets and visual patterns.</p>
+          <a href="https://github.com/TVANISH002/-Global-Countries-EDA-" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="card">
+          <h3>Next Word Predictor (LSTM)</h3>
+          <div class="meta">Sequence Modeling</div>
+          <p>Text generation learning project built around LSTM-based next-word prediction.</p>
+          <a href="https://github.com/TVANISH002/Next-Word-predictor-LSTM-RNN-Text-Model" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">Back to <a href="index.html" style="color:#4ade80; font-weight:700;">home</a> • © 2026 Anish Tirumala Venkata</div>
+  </footer>
+</body>
+</html>
