@@ -329,6 +329,91 @@
       color: #dcffe8;
     }
 
+    /* Added: architecture block for ongoing project */
+    .architecture-wrap {
+      margin-top: 1.15rem;
+      padding: 1rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.025);
+    }
+
+    .architecture-title {
+      margin-bottom: 0.9rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .architecture-flow {
+      display: grid;
+      grid-template-columns: repeat(13, minmax(0, 1fr));
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .arch-box {
+      min-height: 98px;
+      padding: 0.9rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    .arch-box strong {
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+
+    .arch-box span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.35;
+    }
+
+    .arch-arrow {
+      text-align: center;
+      color: var(--accent3);
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .architecture-support {
+      margin-top: 1rem;
+    }
+
+    .arch-support-box {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .arch-support-box strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.92rem;
+    }
+
+    .arch-support-box span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .architecture-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .subtle-link-wrap {
       text-align: center;
       margin-top: 2rem;
@@ -426,6 +511,21 @@
       text-align: center;
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    @media (max-width: 1100px) {
+      .architecture-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .arch-arrow {
+        transform: rotate(90deg);
+        font-size: 1rem;
+      }
+
+      .arch-box {
+        min-height: auto;
+      }
     }
 
     @media (max-width: 980px) {
@@ -565,7 +665,7 @@
       </div>
 
       <div class="projects-grid">
-        <article class="project-card">
+        <article class="project-card" style="grid-column: 1 / -1;">
           <div class="project-content">
             <div class="project-top">
               <div>
@@ -588,6 +688,7 @@
               <strong>Qdrant or ChromaDB</strong> for retrieval, <strong>Groq-hosted LLMs</strong> for reasoning, and
               <strong>Deepgram / ElevenLabs</strong> for speech interfaces.
             </p>
+
             <div class="tech-badges">
               <span class="tech-badge">Twilio</span>
               <span class="tech-badge">LangGraph</span>
@@ -596,6 +697,72 @@
               <span class="tech-badge">Groq</span>
               <span class="tech-badge">Deepgram</span>
               <span class="tech-badge">ElevenLabs</span>
+            </div>
+
+            <div class="architecture-wrap">
+              <div class="architecture-title">Proposed Architecture</div>
+
+              <div class="architecture-flow">
+                <div class="arch-box">
+                  <strong>User Call</strong>
+                  <span>Inbound or outbound voice interaction</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-box">
+                  <strong>Telephony Layer</strong>
+                  <span>Twilio call routing and session handling</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-box">
+                  <strong>Speech-to-Text</strong>
+                  <span>Deepgram streaming transcription</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-box">
+                  <strong>Agent Orchestrator</strong>
+                  <span>LangGraph state, reasoning, and tool execution</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-box">
+                  <strong>RAG + Business Tools</strong>
+                  <span>Knowledge retrieval, CRM actions, scheduling, order status</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-box">
+                  <strong>Text-to-Speech</strong>
+                  <span>ElevenLabs natural voice generation</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-box">
+                  <strong>Caller Response</strong>
+                  <span>Natural conversational audio back to the user</span>
+                </div>
+              </div>
+
+              <div class="architecture-support">
+                <div class="arch-support-box">
+                  <strong>Observability & Reliability Layer</strong>
+                  <span>Logging, monitoring, retries, fallbacks, latency tracking, and human handoff for complex cases</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="architecture-note">
+              This architecture is being designed with <strong>production-oriented components</strong> in mind:
+              telephony integration, real-time transcription, orchestration, retrieval grounding, business tool connectivity,
+              voice synthesis, and observability for reliability and scale.
             </div>
           </div>
         </article>
