@@ -6,25 +6,21 @@
 <title>Anish | AI Engineer</title>
 
 <style>
-:root{
+:root {
   --bg:#07140d;
   --bg2:#0d1f15;
-  --card:rgba(20,40,28,0.7);
-  --text:#eafff2;
-  --muted:#9fb7a7;
+  --panel:rgba(12,27,18,0.8);
+  --text:#edf9f1;
+  --muted:#b9d5c2;
   --accent:#4ade80;
   --border:rgba(255,255,255,0.08);
 }
 
-*{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Inter,system-ui;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(74,222,128,0.1), transparent),
-    linear-gradient(180deg,var(--bg),var(--bg2));
 }
 
 .container{
@@ -33,107 +29,63 @@ body{
   margin:auto;
 }
 
-section{padding:70px 0}
+h1,h2,h3{margin:0}
 
-/* NAV */
+section{padding:60px 0}
+
 .nav{
   position:sticky;
   top:0;
-  backdrop-filter:blur(12px);
   background:#07140de0;
+  padding:15px 0;
   border-bottom:1px solid var(--border);
-  padding:14px 0;
-}
-
-.nav-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
 }
 
 .nav a{
-  margin-left:15px;
+  margin-right:15px;
   color:var(--muted);
-  font-size:14px;
 }
 
-.nav a:hover{color:white}
-
-/* HERO */
 .hero h1{
   font-size:3rem;
-  line-height:1.1;
-}
-
-.hero p{
-  color:var(--muted);
-  max-width:700px;
 }
 
 .btn{
   display:inline-block;
-  margin-top:15px;
-  margin-right:10px;
-  padding:10px 18px;
+  margin:10px 10px 0 0;
+  padding:10px 16px;
   border-radius:10px;
   border:1px solid var(--border);
-  transition:0.2s;
 }
 
-.btn:hover{
-  transform:translateY(-2px);
-  border-color:var(--accent);
-}
-
-/* CARD */
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:16px;
+  background:var(--panel);
   padding:20px;
-  backdrop-filter:blur(10px);
-  transition:0.2s;
+  border-radius:15px;
+  border:1px solid var(--border);
 }
 
-.card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(74,222,128,0.4);
-}
-
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:20px;
 }
 
-/* TAGS */
 .tag{
-  display:inline-block;
-  margin:4px;
-  padding:6px 10px;
+  padding:5px 10px;
   border-radius:20px;
   border:1px solid var(--border);
-  font-size:13px;
+  margin:5px;
+  display:inline-block;
 }
 
-/* TECH BADGES */
 .tech{
-  display:inline-block;
-  margin:4px 4px 0 0;
+  font-size:12px;
   padding:4px 8px;
   border-radius:20px;
   border:1px solid var(--border);
-  font-size:12px;
-  color:#d6ffe6;
-}
-
-/* ARCH */
-.arch-grid{
-  display:grid;
-  grid-template-columns:repeat(5,1fr);
-  gap:10px;
-  text-align:center;
+  margin:4px;
+  display:inline-block;
 }
 
 .arch-box{
@@ -143,12 +95,11 @@ section{padding:70px 0}
   font-size:12px;
 }
 
-/* MOBILE */
-@media(max-width:800px){
-  .grid{grid-template-columns:1fr}
-  .arch-grid{grid-template-columns:1fr}
-  .hero h1{font-size:2.2rem}
+.arrow{
+  text-align:center;
+  color:var(--accent);
 }
+
 </style>
 </head>
 
@@ -156,9 +107,9 @@ section{padding:70px 0}
 
 <!-- NAV -->
 <div class="nav">
-  <div class="container nav-inner">
+  <div class="container">
     <strong>Anish.ai</strong>
-    <div>
+    <div style="float:right;">
       <a href="#about">About</a>
       <a href="#ongoing">Ongoing</a>
       <a href="#projects">Projects</a>
@@ -172,12 +123,12 @@ section{padding:70px 0}
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <h1>Building AI systems that retrieve, reason, and deliver grounded results</h1>
+    <h1>LLM-powered systems that deliver grounded results</h1>
     <p>
-      I design LLM-powered systems using agentic workflows, retrieval pipelines, and production-oriented architecture.
+      I build agentic AI systems using RAG, multi-agent workflows, and production-style architecture.
     </p>
 
-    <a class="btn" href="#projects">Explore Work</a>
+    <a class="btn" href="#projects">Projects</a>
     <a class="btn" href="projects.html">All Projects</a>
   </div>
 </section>
@@ -188,12 +139,12 @@ section{padding:70px 0}
     <div class="card">
       <p>
         I build systems combining retrieval, orchestration, and evaluation.
-        Focused on agentic AI, RAG pipelines, and production-ready system design.
+        Focused on agentic AI, RAG pipelines, and production-ready design.
       </p>
     </div>
 
     <div class="card">
-      <strong>Focus</strong><br>
+      <strong>Focus Areas</strong><br>
       <span class="tag">Agentic AI</span>
       <span class="tag">RAG</span>
       <span class="tag">LangChain</span>
@@ -206,13 +157,13 @@ section{padding:70px 0}
 <!-- ONGOING -->
 <section id="ongoing">
   <div class="container">
-    <h2>Current Project</h2>
+    <h2>Current Working Project</h2>
 
     <div class="card">
       <h3>Voice Agent for Customer Support</h3>
       <p>
-        Designing a voice-based AI system integrating STT, LLM reasoning,
-        RAG, and TTS for real-time conversations.
+        Designing a voice-based AI system using STT, LLM reasoning, RAG, and TTS
+        for real-time customer interaction.
       </p>
 
       <span class="tech">Twilio</span>
@@ -227,25 +178,36 @@ section{padding:70px 0}
 <!-- ARCHITECTURE -->
 <section>
   <div class="container">
-    <h2>System Design</h2>
+    <h2>Ongoing Project Architecture</h2>
 
     <div class="card">
-      <div class="arch-grid">
+
+      <div class="grid">
         <div class="arch-box">User Call</div>
         <div class="arch-box">Telephony</div>
-        <div class="arch-box">STT</div>
-        <div class="arch-box">LLM</div>
-        <div class="arch-box">RAG</div>
-        <div class="arch-box">APIs</div>
-        <div class="arch-box">Response</div>
-        <div class="arch-box">TTS</div>
-        <div class="arch-box">Audio</div>
+
+        <div class="arch-box">Media Server</div>
+        <div class="arch-box">Speech to Text</div>
+
+        <div class="arch-box">LLM Orchestrator</div>
+        <div class="arch-box">RAG System</div>
+
+        <div class="arch-box">Business APIs</div>
+        <div class="arch-box">Response Generation</div>
+
+        <div class="arch-box">Text to Speech</div>
+        <div class="arch-box">Audio Response</div>
       </div>
+
+      <p style="margin-top:10px;color:var(--muted)">
+        Production-oriented design integrating telephony, LLM reasoning, retrieval, and real-time response.
+      </p>
+
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- FEATURED -->
 <section id="projects">
   <div class="container">
     <h2>Featured Projects</h2>
@@ -254,7 +216,8 @@ section{padding:70px 0}
 
       <div class="card">
         <h3>Agentic Research Platform</h3>
-        <p>Multi-agent RAG system for automated research workflows.</p>
+        <p>Multi-agent RAG workflow for automated research.</p>
+
         <span class="tech">LangChain</span>
         <span class="tech">FAISS</span>
         <span class="tech">Tavily</span>
@@ -262,21 +225,25 @@ section{padding:70px 0}
 
       <div class="card">
         <h3>Job2Mail</h3>
-        <p>AI-powered cold outreach automation using semantic search.</p>
+        <p>AI cold outreach automation using semantic search.</p>
+
         <span class="tech">ChromaDB</span>
         <span class="tech">Groq</span>
+        <span class="tech">Streamlit</span>
       </div>
 
       <div class="card">
         <h3>Enterprise RAG</h3>
         <p>Document-based QA system with retrieval optimization.</p>
+
         <span class="tech">FAISS</span>
         <span class="tech">FastAPI</span>
       </div>
 
       <div class="card">
         <h3>Diabetes ML</h3>
-        <p>Healthcare classification system focused on recall.</p>
+        <p>Recall-focused classification system.</p>
+
         <span class="tech">scikit-learn</span>
       </div>
 
@@ -296,7 +263,7 @@ section{padding:70px 0}
 
     <div class="card">
       <h3>Supervisor • UF RecSports</h3>
-      <p>Data analytics and reporting automation.</p>
+      <p>Data analysis and reporting automation.</p>
     </div>
   </div>
 </section>
