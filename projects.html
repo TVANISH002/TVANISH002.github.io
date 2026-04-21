@@ -265,7 +265,7 @@
       <p>
         A broader view of my work across <strong>AI engineering</strong>, <strong>machine learning</strong>,
         <strong>backend development</strong>, <strong>analytics</strong>, and <strong>infrastructure-oriented learning</strong>.
-        These projects complement my featured systems by showing range, consistent execution, and hands-on effort across different problem types.
+        These projects complement my featured systems by showing range, consistency, and hands-on execution across different problem types.
       </p>
     </div>
   </header>
@@ -274,10 +274,48 @@
     <div class="container">
       <div class="section-head">
         <h2>Additional Projects</h2>
-        <p>These projects highlight my work across predictive modeling, forecasting, backend APIs, operational analytics, business reporting, and infrastructure learning.</p>
+        <p>These projects highlight work across predictive modeling, forecasting, backend APIs, operational analytics, reporting, and infrastructure learning.</p>
       </div>
 
       <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Diabetes Risk Screening ML System</h3>
+                <p class="project-sub">Recall-Focused Healthcare Classification</p>
+              </div>
+              <span class="badge">ML</span>
+            </div>
+            <p>
+              Built a <strong>screening-oriented ML system</strong> for early diabetes risk estimation, with emphasis on
+              <strong>recall-focused evaluation</strong> for high-sensitivity healthcare use cases.
+            </p>
+            <p>
+              Designed the workflow with preprocessing, model inference, and a simple application layer to connect ML outputs
+              to a usable screening interface rather than a notebook-only experiment.
+            </p>
+            <p>
+              Focused evaluation choices on realistic screening behavior rather than accuracy alone, improving the project’s
+              relevance for practical healthcare classification scenarios.
+            </p>
+            <p>
+              Deployed the solution through <strong>FastAPI</strong> and a lightweight <strong>Streamlit</strong> interface,
+              making the workflow easier to interact with and demonstrate end-to-end.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">scikit-learn</span>
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">Streamlit</span>
+              <span class="tech-badge">Classification</span>
+              <span class="tech-badge">Healthcare</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TVANISH002/diabetes-risk-screening-ml" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
 
         <article class="project-card">
           <div class="project-content">
@@ -289,17 +327,27 @@
               <span class="badge">ML</span>
             </div>
             <p>
-              Built a machine learning workflow for estimating borrower risk using structured financial data,
-              focusing on predictive modeling, feature quality, and decision-oriented risk segmentation.
+              Built a <strong>credit risk prediction workflow</strong> to identify likely loan defaulters using structured financial data,
+              with emphasis on preprocessing quality, feature selection, and interpretable risk modeling.
             </p>
             <p>
-              The project reflects practical classification work in a finance-style setting, emphasizing preprocessing,
-              evaluation, and business-relevant risk assessment rather than only raw model accuracy.
+              Cleaned messy data containing <strong>missing values</strong>, inconsistent entries, unrealistic records such as
+              <strong>negative income values</strong>, and extreme outliers, then reduced <strong>30–35 initial features</strong>
+              to <strong>20 meaningful variables</strong> through feature analysis, correlation review, and business relevance checks.
+            </p>
+            <p>
+              Applied <strong>SMOTE-Tomek</strong> to address class imbalance and compared results against a <strong>baseline modeling workflow</strong>,
+              improving the robustness of default prediction on imbalanced financial data.
+            </p>
+            <p>
+              Improved model interpretability by removing weak predictors and surfacing less obvious variables that showed stronger association with default risk.
             </p>
             <div class="tech-badges">
               <span class="tech-badge">Python</span>
               <span class="tech-badge">Classification</span>
               <span class="tech-badge">Feature Engineering</span>
+              <span class="tech-badge">SMOTE-Tomek</span>
+              <span class="tech-badge">Data Cleaning</span>
               <span class="tech-badge">Finance</span>
             </div>
             <div class="project-links">
@@ -323,7 +371,7 @@
             </p>
             <p>
               This project demonstrates practical ML application in security-focused pipelines, where detection quality
-              and classification reliability matter more than just experimentation.
+              and classification reliability matter more than only experimentation.
             </p>
             <div class="tech-badges">
               <span class="tech-badge">Python</span>
@@ -351,8 +399,8 @@
               with outputs delivered through an interactive Streamlit interface.
             </p>
             <p>
-              The project compares ARIMA, ETS, and ML-based forecasting strategies to understand tradeoffs in time-series
-              modeling and practical demand estimation.
+              Compared ARIMA, ETS, and ML-based forecasting strategies to understand tradeoffs in time-series modeling
+              and practical demand estimation.
             </p>
             <div class="tech-badges">
               <span class="tech-badge">ARIMA</span>
