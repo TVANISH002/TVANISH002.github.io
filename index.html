@@ -313,22 +313,6 @@
       font-size: 0.95rem;
     }
 
-    .tech-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 0.3rem;
-    }
-
-    .tech-badge {
-      font-size: 0.78rem;
-      padding: 0.38rem 0.62rem;
-      border-radius: 999px;
-      border: 1px solid rgba(74,222,128,0.22);
-      background: rgba(74,222,128,0.08);
-      color: #dcffe8;
-    }
-
     .subtle-link-wrap {
       text-align: center;
       margin-top: 2rem;
@@ -421,6 +405,11 @@
       border: 1px solid rgba(255,255,255,0.09);
     }
 
+    .architecture-grid,
+    .architecture-grid-2 {
+      width: 100%;
+    }
+
     .footer {
       padding: 1.6rem 0 2.3rem;
       text-align: center;
@@ -429,8 +418,20 @@
     }
 
     @media (max-width: 980px) {
-      .hero-grid, .about-grid, .contact-grid, .projects-grid, .skills-grid {
+      .hero-grid, .about-grid, .contact-grid, .projects-grid {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .architecture-grid,
+      .architecture-grid-2 {
+        grid-template-columns: 1fr !important;
+      }
+
+      .architecture-grid > div,
+      .architecture-grid-2 > div {
+        text-align: center;
       }
     }
 
@@ -440,7 +441,7 @@
         align-items: flex-start;
       }
 
-      .metric-grid {
+      .metric-grid, .skills-grid {
         grid-template-columns: 1fr;
       }
 
@@ -460,8 +461,10 @@
       <a class="brand" href="#home">Anish<span>.ai</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#current-work">Ongoing</a>
-        <a href="#projects">Projects</a>
+        <a href="#current-work">Current Work</a>
+        <a href="#projects">Featured</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -478,12 +481,27 @@
         <p>
           I build <strong>LLM-powered systems</strong> that retrieve, reason, and generate
           <strong>grounded outputs</strong> from live data. My work focuses on
-          <strong>agentic AI</strong>, <strong>retrieval-augmented generation</strong>,
-          <strong>multi-agent workflows</strong>, and <strong>production-oriented AI applications</strong>.
+          <strong>Agentic AI</strong>, <strong>Retrieval-Augmented Generation</strong>,
+          <strong>multi-agent workflows</strong>, and <strong>production-oriented AI engineering</strong>
+          across backend systems, evaluation pipelines, and intelligent automation.
         </p>
 
+        <div style="
+          margin-top: 1rem;
+          padding: 1rem 1.1rem;
+          border-left: 3px solid rgba(74,222,128,0.7);
+          background: rgba(255,255,255,0.035);
+          border-radius: 0 14px 14px 0;
+          color: #d7f5df;
+          max-width: 760px;
+          font-size: 0.98rem;
+        ">
+          <strong>Mission:</strong> Design AI systems that combine retrieval, orchestration, and evaluation
+          to turn raw information into reliable, actionable outputs.
+        </div>
+
         <div class="cta-row">
-          <a class="btn primary" href="#projects">Explore Projects</a>
+          <a class="btn primary" href="#projects">View Featured Work</a>
           <a class="btn" href="projects.html">All Projects</a>
           <a class="btn" href="https://github.com/TVANISH002" target="_blank" rel="noreferrer">GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/anish-tv" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -496,19 +514,19 @@
         <div class="metric-grid">
           <div class="metric">
             <strong>6</strong>
-            <span>Agent roles in orchestration workflow</span>
+            <span>Agent roles in multi-step orchestration pipeline</span>
           </div>
           <div class="metric">
             <strong>50+</strong>
-            <span>Evaluation queries used in benchmarking</span>
+            <span>Evaluation queries used in system benchmarking</span>
           </div>
           <div class="metric">
             <strong>5–8</strong>
-            <span>External sources processed per query</span>
+            <span>Live sources processed per research workflow</span>
           </div>
           <div class="metric">
-            <strong>~15s</strong>
-            <span>Target latency in optimized workflow</span>
+            <strong>5–20</strong>
+            <span>Semantic chunks indexed per retrieval task</span>
           </div>
         </div>
       </aside>
@@ -519,7 +537,7 @@
     <div class="container">
       <div class="section-head">
         <h2>About Me</h2>
-        <p>I build modular AI systems that combine retrieval, orchestration, and evaluation with real engineering intent.</p>
+        <p>AI systems builder with foundations in data science, backend engineering, and practical deployment thinking.</p>
       </div>
 
       <div class="about-grid">
@@ -541,13 +559,13 @@
           <h3 style="margin-top:0;">Focus Areas</h3>
           <div class="tags">
             <span class="tag">Agentic AI</span>
+            <span class="tag">Generative AI</span>
             <span class="tag">RAG Systems</span>
-            <span class="tag">Multi-Agent Workflows</span>
             <span class="tag">LLM Evaluation</span>
             <span class="tag">FastAPI</span>
-            <span class="tag">FAISS</span>
             <span class="tag">LangChain</span>
             <span class="tag">ChromaDB</span>
+            <span class="tag">FAISS</span>
             <span class="tag">Data Science</span>
             <span class="tag">LLMOps & DevOps Basics</span>
             <span class="tag">Shell Scripting</span>
@@ -560,11 +578,51 @@
   <section id="current-work">
     <div class="container">
       <div class="section-head">
-        <h2>Current Working Project</h2>
-        <p>A production-oriented AI system I am currently designing and planning in depth.</p>
+        <h2>Current Working Projects</h2>
+        <p>Systems I am actively iterating on through staged development, design, evaluation, and production-readiness improvements.</p>
       </div>
 
       <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Agentic Research Platform — Production Readiness Track</h3>
+                <p>Current Phase: Evaluation → Deployment Readiness</p>
+              </div>
+              <span class="badge">In Progress</span>
+            </div>
+            <p>
+              Extending the core multi-agent research system with <strong>Dockerization</strong>, <strong>CI/CD workflows</strong>,
+              improved observability, and cleaner deployment structure for production-style usage.
+            </p>
+            <p>
+              Current focus includes modular hardening, repo cleanup, execution reliability, and preparing the system for
+              deployment-oriented workflows rather than only local experimentation.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Enterprise RAG Assistant</h3>
+                <p>Current Phase: Retrieval Quality + Ongoing Expansion</p>
+              </div>
+              <span class="badge">Ongoing</span>
+            </div>
+            <p>
+              Continuing to improve retrieval relevance, chunking strategy, and grounded answer quality while evolving the
+              system toward a more deployment-ready architecture.
+            </p>
+            <p>
+              Current work includes strengthening evaluation depth, refining retrieval logic, and preparing the pipeline for
+              better scalability and maintainability.
+            </p>
+          </div>
+        </article>
+
         <article class="project-card">
           <div class="project-content">
             <div class="project-top">
@@ -575,28 +633,19 @@
               <span class="badge">Planned</span>
             </div>
             <p>
-              Designing a <strong>voice-based AI agent</strong> that can automate customer service calls by combining
-              <strong>speech-to-text</strong>, <strong>LLM reasoning</strong>, <strong>RAG-based knowledge retrieval</strong>,
-              and <strong>text-to-speech</strong> for natural conversational responses.
+              Designing a <strong>voice-based AI agent</strong> that handles customer service calls using
+              <strong>speech-to-text</strong>, <strong>LLM reasoning</strong>, <strong>RAG-based retrieval</strong>,
+              and <strong>text-to-speech</strong> for natural responses.
             </p>
             <p>
               Planned use cases include <strong>FAQ handling</strong>, <strong>order status lookup</strong>,
               <strong>appointment scheduling</strong>, and <strong>routing complex issues to human agents</strong>.
             </p>
             <p>
-              Target stack includes <strong>Twilio</strong> for telephony, <strong>LangChain / LangGraph</strong> for orchestration,
-              <strong>Qdrant or ChromaDB</strong> for retrieval, <strong>Groq-hosted LLMs</strong> for reasoning, and
+              Target stack includes <strong>Twilio</strong>, <strong>LangChain / LangGraph</strong>,
+              <strong>Qdrant or ChromaDB</strong>, <strong>Groq-hosted LLMs</strong>, and
               <strong>Deepgram / ElevenLabs</strong> for speech interfaces.
             </p>
-            <div class="tech-badges">
-              <span class="tech-badge">Twilio</span>
-              <span class="tech-badge">LangGraph</span>
-              <span class="tech-badge">RAG</span>
-              <span class="tech-badge">Qdrant / ChromaDB</span>
-              <span class="tech-badge">Groq</span>
-              <span class="tech-badge">Deepgram</span>
-              <span class="tech-badge">ElevenLabs</span>
-            </div>
           </div>
         </article>
       </div>
@@ -607,7 +656,7 @@
     <div class="container">
       <div class="section-head">
         <h2>Featured Projects</h2>
-        <p>Selected projects that best represent my AI engineering, retrieval systems, and applied machine learning work.</p>
+        <p>Selected work that best represents my AI engineering, retrieval, and applied ML capabilities.</p>
       </div>
 
       <div class="projects-grid">
@@ -628,13 +677,6 @@
               Integrated <strong>RAG with FAISS + MiniLM</strong>, processing <strong>5–8 live sources</strong> and
               <strong>5–20 chunks per query</strong> for grounded, citation-aware report generation.
             </p>
-            <div class="tech-badges">
-              <span class="tech-badge">LangChain</span>
-              <span class="tech-badge">FAISS</span>
-              <span class="tech-badge">MiniLM</span>
-              <span class="tech-badge">Tavily</span>
-              <span class="tech-badge">Streamlit</span>
-            </div>
             <div class="project-links">
               <a href="https://github.com/TVANISH002/Agentic-Research-Platform" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
@@ -658,13 +700,6 @@
               Used <strong>ChromaDB + embeddings</strong> for top-K semantic retrieval and paired it with Groq-based
               generation for context-aware outreach automation.
             </p>
-            <div class="tech-badges">
-              <span class="tech-badge">LangChain</span>
-              <span class="tech-badge">Groq</span>
-              <span class="tech-badge">ChromaDB</span>
-              <span class="tech-badge">Embeddings</span>
-              <span class="tech-badge">Streamlit</span>
-            </div>
             <div class="project-links">
               <a href="https://github.com/TVANISH002/job2mail-ai-cold-outreach" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
@@ -688,13 +723,6 @@
               Improved retrieval relevance from <strong>65% to 82%</strong> and reduced hallucinations through
               retrieval-grounded inference.
             </p>
-            <div class="tech-badges">
-              <span class="tech-badge">FAISS</span>
-              <span class="tech-badge">MiniLM</span>
-              <span class="tech-badge">FastAPI</span>
-              <span class="tech-badge">RAG</span>
-              <span class="tech-badge">Evaluation</span>
-            </div>
             <div class="project-links">
               <a href="https://github.com/TVANISH002/Enterprise-RAG-AI-Assistant" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
@@ -717,12 +745,6 @@
             <p>
               Emphasized <strong>recall-focused evaluation</strong> to align the model with early-risk detection use cases.
             </p>
-            <div class="tech-badges">
-              <span class="tech-badge">scikit-learn</span>
-              <span class="tech-badge">FastAPI</span>
-              <span class="tech-badge">Streamlit</span>
-              <span class="tech-badge">Classification</span>
-            </div>
             <div class="project-links">
               <a href="https://github.com/TVANISH002/diabetes-risk-screening-ml" target="_blank" rel="noreferrer">GitHub ↗</a>
             </div>
@@ -734,6 +756,105 @@
         <a class="subtle-link" href="projects.html" target="_blank" rel="noreferrer">
           Explore Full Project Portfolio →
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="architecture">
+    <div class="container">
+      <div class="section-head">
+        <h2>System Architecture</h2>
+        <p>A simple view of how my flagship agentic research system works end-to-end.</p>
+      </div>
+
+      <div class="card panel">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 0.75rem;
+            align-items: center;
+          "
+          class="architecture-grid"
+        >
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>User Query</strong>
+          </div>
+
+          <div style="text-align:center; color:#86efac; font-weight:700;">→</div>
+
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>Planner</strong>
+          </div>
+
+          <div style="text-align:center; color:#86efac; font-weight:700;">→</div>
+
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>Search + Scrape</strong>
+          </div>
+
+          <div style="text-align:center; color:#86efac; font-weight:700;">→</div>
+
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>Chunk + Retrieve</strong>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 0.75rem;
+            align-items: center;
+            margin-top: 1rem;
+          "
+          class="architecture-grid-2"
+        >
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>Writer</strong>
+          </div>
+
+          <div style="text-align:center; color:#86efac; font-weight:700;">→</div>
+
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>Evaluator</strong>
+          </div>
+
+          <div style="text-align:center; color:#86efac; font-weight:700;">→</div>
+
+          <div style="padding: 1rem; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); text-align:center;">
+            <strong>Grounded Output</strong>
+          </div>
+        </div>
+
+        <p style="margin-top: 1rem; color: var(--muted);">
+          This workflow reflects my focus on <strong>agentic orchestration</strong>,
+          <strong>retrieval grounding</strong>, and <strong>evaluation-driven AI systems</strong>
+          rather than one-shot prompting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <h2>Education</h2>
+        <p>Academic background in computer science, artificial intelligence, and systems-oriented learning.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>University of Florida</h3>
+          <div class="meta">2024 – 2025</div>
+          <p>Master of Science in Computer Science, with focus on AI systems, machine learning, and LLM-powered applications.</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Bennett University</h3>
+          <div class="meta">2020 – 2024</div>
+          <p>Bachelor of Technology in Computer Science (Artificial Intelligence), with emphasis on machine learning, data science, and software engineering.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -787,7 +908,7 @@
           </div>
           <div class="skill-box">
             <strong>Frameworks & Tools</strong>
-            <span>LangChain, LangGraph, Transformers, Tavily, BeautifulSoup, Requests, Groq</span>
+            <span>LangChain, Transformers, Tavily, BeautifulSoup, Requests, Groq</span>
           </div>
           <div class="skill-box">
             <strong>Backend & APIs</strong>
@@ -799,7 +920,7 @@
           </div>
           <div class="skill-box">
             <strong>DevOps & Automation</strong>
-            <span>Docker (basic), GitHub Actions, CI/CD concepts, Shell Scripting, Environment Management</span>
+            <span>Docker (basic), GitHub Actions, CI/CD concepts, Shell Scripting (bash), environment management</span>
           </div>
           <div class="skill-box">
             <strong>Data Engineering</strong>
