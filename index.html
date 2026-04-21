@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anish Tirumala Venkata | AI Engineer Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Anish Tirumala Venkata — AI Engineer focused on Agentic AI, RAG systems, LLM applications, data science, and production-oriented AI engineering."
+  />
+  <style>
+    :root {
+      --bg: #07140d;
+      --bg2: #0d1f15;
+      --panel: rgba(12, 27, 18, 0.78);
+      --panel-2: rgba(16, 35, 24, 0.88);
+      --text: #edf9f1;
+      --muted: #b9d5c2;
+      --accent: #4ade80;
+      --accent2: #22c55e;
+      --accent3: #86efac;
+      --border: rgba(255, 255, 255, 0.09);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+      --maxw: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(74, 222, 128, 0.14), transparent 24%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.12), transparent 20%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 20, 13, 0.84);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.08rem;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 6rem 0 3.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.46rem 0.88rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      font-size: 0.92rem;
+    }
+
+    h1 {
+      margin: 1rem 0 0.85rem;
+      font-size: clamp(2.8rem, 5.5vw, 4.9rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 0 1.2rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .accent { color: var(--accent); }
+    .accent2 { color: var(--accent3); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.45rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.15rem;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      font-weight: 650;
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(74, 222, 128, 0.45);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #16a34a);
+      border-color: transparent;
+      box-shadow: 0 14px 30px rgba(34,197,94,0.24);
+      color: white;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 1.25rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(74,222,128,0.18), transparent 35%);
+      pointer-events: none;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .metric {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    section { padding: 1.4rem 0 3rem; }
+
+    .section-head {
+      margin-bottom: 1.2rem;
+    }
+
+    .section-head h2 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-grid, .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.2rem;
+    }
+
+    .panel { padding: 1.3rem; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .tag {
+      padding: 0.46rem 0.78rem;
+      border-radius: 999px;
+      background: rgba(74,222,128,0.12);
+      color: #e8fff0;
+      border: 1px solid rgba(74,222,128,0.22);
+      font-size: 0.9rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .project-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      height: 100%;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .project-top h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.25;
+    }
+
+    .project-top p {
+      margin: 0.2rem 0 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .badge {
+      white-space: nowrap;
+      padding: 0.42rem 0.7rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent2), #15803d);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .project-content p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.9rem;
+      margin-top: auto;
+      padding-top: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.3rem;
+    }
+
+    .tech-badge {
+      font-size: 0.78rem;
+      padding: 0.38rem 0.62rem;
+      border-radius: 999px;
+      border: 1px solid rgba(74,222,128,0.22);
+      background: rgba(74,222,128,0.08);
+      color: #dcffe8;
+    }
+
+    .architecture-block {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      overflow: hidden;
+    }
+
+    .architecture-block h4 {
+      margin: 0 0 0.9rem;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .arch-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding-bottom: 0.35rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(74,222,128,0.35) transparent;
+    }
+
+    .arch-flow::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .arch-flow::-webkit-scrollbar-thumb {
+      background: rgba(74,222,128,0.35);
+      border-radius: 999px;
+    }
+
+    .arch-flow::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .arch-node {
+      flex: 0 0 220px;
+      min-height: 150px;
+      padding: 0.95rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0.35rem;
+    }
+
+    .arch-node strong {
+      font-size: 0.95rem;
+      line-height: 1.2;
+    }
+
+    .arch-node span {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .arch-arrow {
+      flex: 0 0 auto;
+      align-self: center;
+      color: var(--accent3);
+      font-size: 1.2rem;
+      font-weight: 800;
+      padding: 0 0.1rem;
+    }
+
+    .arch-support {
+      margin-top: 0.9rem;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .arch-support strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .arch-support span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .depth-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    .depth-list li + li {
+      margin-top: 0.5rem;
+    }
+
+    .subtle-link-wrap {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .subtle-link {
+      display: inline-block;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(74,222,128,0.35);
+      color: #86efac;
+      font-weight: 650;
+      background: rgba(74,222,128,0.08);
+      transition: all 0.2s ease;
+    }
+
+    .subtle-link:hover {
+      transform: translateY(-2px);
+      background: rgba(74,222,128,0.14);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      padding: 1rem 1rem 1rem 1.1rem;
+      border-left: 3px solid rgba(74,222,128,0.5);
+      background: rgba(255,255,255,0.03);
+      border-radius: 0 18px 18px 0;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 0.2rem;
+      font-size: 1.04rem;
+    }
+
+    .meta {
+      color: var(--accent2);
+      font-size: 0.92rem;
+      font-weight: 650;
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-item p,
+    .contact-card p { margin: 0; color: var(--muted); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .skill-box {
+      padding: 0.9rem 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .skill-box strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-box span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .footer {
+      padding: 1.6rem 0 2.3rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .about-grid, .contact-grid, .projects-grid, .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .arch-flow {
+        flex-direction: column;
+        overflow-x: visible;
+      }
+
+      .arch-node {
+        flex: 1 1 auto;
+        min-height: auto;
+        width: 100%;
+      }
+
+      .arch-arrow {
+        transform: rotate(90deg);
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 4.5rem;
+      }
+
+      h1 {
+        font-size: 2.55rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">Anish<span>.ai</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#current-work">Ongoing</a>
+        <a href="#projects">Projects</a>
+        <a href="#depth">Depth</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill">⚡ Evaluation-Driven AI Systems • Agentic Workflows • Grounded RAG</div>
+        <h1>Building <span class="accent">LLM-powered systems</span> that retrieve, reason, and deliver <span class="accent2">grounded results</span>.</h1>
+
+        <p>
+          I build <strong>evaluation-driven LLM systems</strong> that combine
+          <strong>retrieval</strong>, <strong>reasoning</strong>, and <strong>orchestration</strong>
+          to generate grounded, verifiable outputs from live data. My work focuses on
+          <strong>agentic AI</strong>, <strong>RAG systems</strong>, <strong>multi-agent workflows</strong>,
+          and <strong>production-oriented AI applications</strong>.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">Explore Projects</a>
+          <a class="btn" href="projects.html">All Projects</a>
+          <a class="btn" href="https://github.com/TVANISH002" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/anish-tv" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://medium.com/@anish9" target="_blank" rel="noreferrer">Medium</a>
+        </div>
+      </div>
+
+      <aside class="card hero-card">
+        <h3>Quick Snapshot</h3>
+        <div class="metric-grid">
+          <div class="metric">
+            <strong>6</strong>
+            <span>Agent roles across planner-to-evaluator orchestration</span>
+          </div>
+          <div class="metric">
+            <strong>50+</strong>
+            <span>Benchmark queries used in evaluation workflows</span>
+          </div>
+          <div class="metric">
+            <strong>10K+</strong>
+            <span>Document chunks indexed in enterprise retrieval pipelines</span>
+          </div>
+          <div class="metric">
+            <strong>65% → 82%</strong>
+            <span>Retrieval relevance improvement through tuning and evaluation</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2>About Me</h2>
+        <p>I build modular AI systems that combine retrieval, orchestration, evaluation, and backend design with real engineering intent.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card panel">
+          <p>
+            My work sits at the intersection of <strong>LLM applications</strong>, <strong>semantic retrieval</strong>,
+            <strong>evaluation-driven AI</strong>, and <strong>backend engineering</strong>. I’m especially interested in
+            systems that use live data, structured reasoning, and grounded generation rather than one-shot prompting.
+          </p>
+          <p style="margin-top:1rem;">
+            I’ve built systems involving <strong>multi-agent orchestration</strong>, <strong>RAG pipelines</strong>,
+            <strong>FAISS-based retrieval</strong>, <strong>real-time web ingestion</strong>, and
+            <strong>citation-aware generation</strong>. I also care about how these systems evolve toward production
+            through modular design, containerization, CI/CD, observability, and AWS-aligned architecture patterns.
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h3 style="margin-top:0;">Focus Areas</h3>
+          <div class="tags">
+            <span class="tag">Evaluation-Driven LLM Systems</span>
+            <span class="tag">Agentic AI Orchestration</span>
+            <span class="tag">Grounded RAG Pipelines</span>
+            <span class="tag">Semantic Retrieval & Ranking</span>
+            <span class="tag">FastAPI & Backend APIs</span>
+            <span class="tag">Vector Search (FAISS / ChromaDB)</span>
+            <span class="tag">CI/CD with GitHub Actions</span>
+            <span class="tag">Containerized AI Workflows</span>
+            <span class="tag">Applied Machine Learning</span>
+            <span class="tag">Data Pipelines & Automation</span>
+            <span class="tag">Observability Thinking</span>
+            <span class="tag">AWS-Aligned System Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="current-work">
+    <div class="container">
+      <div class="section-head">
+        <h2>Current Working Project</h2>
+        <p>A production-oriented AI system I am currently designing and scoping in depth.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Voice Agent for Customer Support</h3>
+                <p>Current Phase: MVP Definition + Architecture Design</p>
+              </div>
+              <span class="badge">In Design</span>
+            </div>
+            <p>
+              Actively designing and scoping an <strong>AI voice agent</strong> for customer support that combines
+              <strong>speech-to-text</strong>, <strong>LLM reasoning</strong>, <strong>RAG-based retrieval</strong>,
+              and <strong>text-to-speech</strong> for natural, multi-turn phone interactions.
+            </p>
+            <p>
+              The MVP is being structured around <strong>FAQ resolution</strong>, <strong>order-status lookup</strong>,
+              <strong>appointment scheduling</strong>, and <strong>human handoff for complex issues</strong>,
+              with emphasis on latency, orchestration state, and reliability.
+            </p>
+            <p>
+              Current engineering focus includes <strong>targeting low-latency turn responses</strong>,
+              <strong>managing state across multi-turn conversations</strong>, and
+              <strong>designing interruption-safe flows for real-time voice interactions</strong>.
+            </p>
+
+            <div class="tech-badges">
+              <span class="tech-badge">Twilio</span>
+              <span class="tech-badge">LangGraph</span>
+              <span class="tech-badge">RAG</span>
+              <span class="tech-badge">Qdrant / ChromaDB</span>
+              <span class="tech-badge">Groq</span>
+              <span class="tech-badge">Deepgram</span>
+              <span class="tech-badge">ElevenLabs</span>
+            </div>
+
+            <div class="architecture-block">
+              <h4>Proposed Architecture</h4>
+
+              <div class="arch-flow">
+                <div class="arch-node">
+                  <strong>User Call</strong>
+                  <span>Inbound or outbound voice interaction</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-node">
+                  <strong>Telephony Layer</strong>
+                  <span>Twilio call routing and session handling</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-node">
+                  <strong>Speech-to-Text</strong>
+                  <span>Deepgram streaming transcription</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-node">
+                  <strong>Agent Orchestrator</strong>
+                  <span>LangGraph state, reasoning, and tool execution</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-node">
+                  <strong>RAG + Business Tools</strong>
+                  <span>Knowledge retrieval, CRM actions, scheduling, order status</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-node">
+                  <strong>Text-to-Speech</strong>
+                  <span>ElevenLabs natural voice generation</span>
+                </div>
+
+                <div class="arch-arrow">→</div>
+
+                <div class="arch-node">
+                  <strong>Caller Response</strong>
+                  <span>Natural conversational audio back to the user</span>
+                </div>
+              </div>
+
+              <div class="arch-support">
+                <strong>Observability & Reliability Layer</strong>
+                <span>Logging, monitoring, retries, fallbacks, human handoff, and latency tracking</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Featured Projects</h2>
+        <p>Selected projects that best represent my AI engineering, retrieval systems, evaluation workflows, and applied machine learning work.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Agentic Research Intelligence Platform</h3>
+                <p>Multi-Agent RAG System</p>
+              </div>
+              <span class="badge">Flagship</span>
+            </div>
+            <p>
+              Built an end-to-end <strong>multi-agent research system</strong> with <strong>6 specialized agents</strong>
+              (Planner, Search, Scraper, Retriever, Writer, Evaluator) to separate task planning, live source discovery,
+              grounded synthesis, and output evaluation.
+            </p>
+            <p>
+              Designed a <strong>RAG pipeline</strong> using FAISS-based semantic retrieval over <strong>5–20 chunks per query</strong>,
+              processing <strong>5–8 live external sources per run</strong> to improve grounding, traceability, and citation-backed generation.
+            </p>
+            <p>
+              Implemented an <strong>evaluation workflow</strong> across <strong>50+ benchmark queries</strong> to assess
+              <strong>relevance</strong>, <strong>faithfulness</strong>, and <strong>completeness</strong>, helping refine retrieval quality
+              and improve the reliability of generated outputs.
+            </p>
+            <p>
+              <strong>Design tradeoff:</strong> modular multi-agent orchestration improved interpretability and evaluation control,
+              while introducing higher latency than a simpler single-chain workflow.
+            </p>
+            <p>
+              Optimized the workflow to achieve approximately <strong>15s end-to-end latency</strong> and structured the system for
+              <strong>Docker-oriented execution</strong> and future CI integration.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">LangChain</span>
+              <span class="tech-badge">FAISS</span>
+              <span class="tech-badge">MiniLM</span>
+              <span class="tech-badge">Tavily</span>
+              <span class="tech-badge">Streamlit</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">GitHub Actions</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TVANISH002/Agentic-Research-Platform" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Enterprise RAG AI Assistant</h3>
+                <p>Grounded Question Answering</p>
+              </div>
+              <span class="badge">RAG</span>
+            </div>
+            <p>
+              Developed a <strong>document-grounded Q&amp;A system</strong> over
+              <strong>10,000+ chunks</strong> using embedding-based retrieval with FAISS indexing.
+            </p>
+            <p>
+              Improved retrieval relevance from <strong>65% to 82%</strong> through chunking refinement,
+              embedding strategy improvements, and retrieval-quality iteration.
+            </p>
+            <p>
+              Reduced hallucination risk by strengthening retrieval grounding and designing the system with
+              <strong>modular separation of retrieval, reasoning, and API-serving layers</strong>,
+              alongside <strong>containerized deployment workflows</strong>.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">FAISS</span>
+              <span class="tech-badge">MiniLM</span>
+              <span class="tech-badge">FastAPI</span>
+              <span class="tech-badge">RAG</span>
+              <span class="tech-badge">Evaluation</span>
+              <span class="tech-badge">Docker</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TVANISH002/Enterprise-RAG-AI-Assistant" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Job2Mail — AI Cold Outreach Automation</h3>
+                <p>LLM + RAG + Semantic Matching</p>
+              </div>
+              <span class="badge">LLM App</span>
+            </div>
+            <p>
+              Built an <strong>LLM-powered outreach automation system</strong> that extracts job descriptions,
+              retrieves relevant project context, and generates personalized cold emails aligned to target roles.
+            </p>
+            <p>
+              Used <strong>ChromaDB + embeddings</strong> to improve <strong>retrieval precision for generation context</strong>,
+              matching job requirements to relevant portfolio projects before response generation.
+            </p>
+            <p>
+              Designed the application with <strong>modular separation of ingestion, retrieval, and generation layers</strong>,
+              and structured it for <strong>containerized execution with Docker</strong>.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">LangChain</span>
+              <span class="tech-badge">Groq</span>
+              <span class="tech-badge">ChromaDB</span>
+              <span class="tech-badge">Embeddings</span>
+              <span class="tech-badge">Streamlit</span>
+              <span class="tech-badge">Docker</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TVANISH002/job2mail-ai-cold-outreach" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-content">
+            <div class="project-top">
+              <div>
+                <h3>Credit Risk Modeling</h3>
+                <p>Financial Risk Classification</p>
+              </div>
+              <span class="badge">ML</span>
+            </div>
+            <p>
+              Built a <strong>credit risk prediction workflow</strong> to identify likely loan defaulters using structured financial data,
+              with emphasis on preprocessing quality, feature selection, and interpretable risk modeling.
+            </p>
+            <p>
+              Cleaned messy data containing <strong>missing values</strong>, inconsistent entries, unrealistic records such as
+              <strong>negative income values</strong>, and extreme outliers, then reduced <strong>30–35 initial features</strong>
+              to <strong>20 meaningful variables</strong> through feature analysis, correlation review, and business relevance checks.
+            </p>
+            <p>
+              Applied <strong>SMOTE-Tomek</strong> to address class imbalance and compared results against a <strong>baseline modeling workflow</strong>,
+              improving the robustness of default prediction on imbalanced financial data.
+            </p>
+            <p>
+              Improved model interpretability by removing weak predictors and surfacing less obvious variables that showed stronger association with default risk.
+            </p>
+            <div class="tech-badges">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Classification</span>
+              <span class="tech-badge">Feature Engineering</span>
+              <span class="tech-badge">SMOTE-Tomek</span>
+              <span class="tech-badge">Data Cleaning</span>
+              <span class="tech-badge">Finance</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/TVANISH002/credit-risk-modeling" target="_blank" rel="noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="subtle-link-wrap">
+        <a class="subtle-link" href="projects.html" target="_blank" rel="noreferrer">
+          Explore Full Project Portfolio →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="depth">
+    <div class="container">
+      <div class="section-head">
+        <h2>Engineering Challenges I’ve Worked Through</h2>
+        <p>Technical problems that shaped how I think about AI systems beyond just building the happy path.</p>
+      </div>
+
+      <div class="card panel">
+        <ul class="depth-list">
+          <li>Balancing <strong>retrieval depth vs latency</strong> in RAG pipelines to improve grounding without slowing response quality.</li>
+          <li>Preventing <strong>agent loops and uncontrolled tool calls</strong> in multi-agent orchestration workflows.</li>
+          <li>Improving <strong>chunking strategy and semantic recall</strong> to raise retrieval precision and downstream answer quality.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>Work across data reliability, reporting automation, AI-assisted analytics, and data-driven impact communication.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Data Scientist • Street Care</h3>
+          <div class="meta">2026 – Present</div>
+          <p>
+            Improved data reliability by <strong>35%</strong> across <strong>10K+ operational records</strong> through validation pipelines,
+            automated reporting workflows to reduce manual effort by <strong>40%</strong>, and integrated AI-assisted workflows
+            using <strong>Copilot</strong> and <strong>Claude</strong> to convert analytical outputs into structured summaries.
+          </p>
+          <p style="margin-top:0.8rem;">
+            Analyzed and transformed <strong>unstructured survey and outreach data</strong> using <strong>Python</strong> and
+            <strong>LLM-based techniques</strong>, extracting key community insights and automating report and grant content generation,
+            enabling faster data-driven decision-making and stronger impact communication.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Member Services Supervisor • University of Florida RecSports</h3>
+          <div class="meta">2024 – 2025</div>
+          <p>
+            Used <strong>Python</strong> and <strong>Excel</strong> for data cleaning, transformation, and weekly reporting across
+            <strong>1,200+ attendance records</strong>, and built <strong>Power BI dashboards</strong> to track trends across
+            <strong>50+ programs</strong>, improving reporting consistency, visibility, and decision support for operations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <h2>Education</h2>
+        <p>Academic foundation in computer science, machine learning, and applied AI systems.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>University of Florida</h3>
+          <div class="meta">M.S. in Computer Science • 2024 – 2025 • USA </div>
+          <p>
+           <strong> Graduate study in computer science with relevant coursework in
+            <strong>Applications of NLP</strong>, <strong>AI Ethics for Tech Leaders</strong>,
+            and <strong>Research Methods for HCC</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+   <div class="timeline">
+        <div class="timeline-item">
+          <h3>Bennett University</h3>
+          <div class="meta">B.Tech in Computer Science • 2020 – 2024 • INDIA</div>
+          <p>
+          <strong>  Strong undergraduate background in computer science, with <strong>coursework and <strong>practical exposure to machine learning, artificial intelligence, data science, and software engineering principles.
+
+   
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p>A focused stack across AI engineering, retrieval systems, data science, analytics, and foundational DevOps.</p>
+      </div>
+
+      <div class="card panel">
+        <div class="skills-grid">
+          <div class="skill-box">
+            <strong>Generative AI & LLM Systems</strong>
+            <span>Agentic AI, Multi-Agent Systems, RAG Pipelines, Prompt Engineering, LLM Evaluation</span>
+          </div>
+          <div class="skill-box">
+            <strong>Retrieval & Search</strong>
+            <span>FAISS, Vector Search, Semantic Retrieval, Embeddings, MiniLM, ChromaDB</span>
+          </div>
+          <div class="skill-box">
+            <strong>Frameworks & Tools</strong>
+            <span>LangChain, LangGraph, Transformers, Tavily, BeautifulSoup, Requests, Groq</span>
+          </div>
+          <div class="skill-box">
+            <strong>Backend & APIs</strong>
+            <span>FastAPI, REST APIs, Async Processing, Modular System Design</span>
+          </div>
+          <div class="skill-box">
+            <strong>Machine Learning & Data Science</strong>
+            <span>EDA, Feature Engineering, Model Evaluation, Statistical Analysis, Pandas, NumPy</span>
+          </div>
+          <div class="skill-box">
+            <strong>Data Visualization & Reporting</strong>
+            <span>Power BI, Excel, Dashboarding, Reporting Automation, Operational Analytics</span>
+          </div>
+          <div class="skill-box">
+            <strong>DevOps & Automation</strong>
+            <span>Docker, GitHub Actions, CI/CD concepts, Shell Scripting, Environment Management</span>
+          </div>
+          <div class="skill-box">
+            <strong>Cloud & Architecture</strong>
+            <span>AWS-aligned design patterns, S3-style storage flows, Lambda-style event workflows, API-based system integration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Open to AI Engineer, GenAI Engineer, and LLM Systems opportunities.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card panel contact-card">
+          <h3 style="margin:0;">What I’m Looking For</h3>
+          <p>
+            Roles where I can contribute to <strong>LLM-powered products</strong>, <strong>agentic workflows</strong>,
+            <strong>RAG systems</strong>, and <strong>production-oriented AI applications</strong> while continuing to grow across
+            system design, model adaptation, and deployment.
+          </p>
+        </div>
+
+        <div class="card panel contact-card">
+          <h3 style="margin:0;">Links</h3>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:anishve9@gmail.com"><span>Email</span><span>↗</span></a>
+            <a class="contact-link" href="https://github.com/TVANISH002" target="_blank" rel="noreferrer"><span>GitHub</span><span>↗</span></a>
+            <a class="contact-link" href="https://www.linkedin.com/in/anish-tv" target="_blank" rel="noreferrer"><span>LinkedIn</span><span>↗</span></a>
+            <a class="contact-link" href="https://medium.com/@anish9" target="_blank" rel="noreferrer"><span>Medium</span><span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"> AI-Engineer portfolio • © 2026 Anish Tirumala Venkata</div>
+  </footer>
+</body>
+</html>
