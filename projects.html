@@ -70,6 +70,12 @@
 
     .brand span { color: var(--accent); }
 
+    .nav-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
     .home-btn {
       display: inline-flex;
       align-items: center;
@@ -255,7 +261,10 @@
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html">Anish<span>.ai</span></a>
-      <a class="home-btn" href="index.html">← Home</a>
+      <div class="nav-actions">
+        <a class="home-btn" href="index.html">← Home</a>
+        <a class="home-btn" href="writing.html">Writing</a>
+      </div>
     </div>
   </nav>
 
