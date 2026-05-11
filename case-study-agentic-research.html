@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Agentic Research Intelligence Platform | Case Study</title>
   <meta
     name="description"
-    content="Case study by Anish Tirumala Venkata on building an Agentic Research Intelligence Platform using multi-agent orchestration, RAG, retrieval evaluation, and grounded AI workflows."
+    content="A detailed case study on building an Agentic Research Intelligence Platform using multi-agent orchestration, RAG, retrieval evaluation, and grounded AI workflows."
   />
 
   <style>
@@ -22,7 +23,7 @@
       --accent3: #86efac;
       --border: rgba(255, 255, 255, 0.09);
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
-      --maxw: 1080px;
+      --maxw: 1120px;
     }
 
     * { box-sizing: border-box; }
@@ -82,12 +83,12 @@
     .nav-links a:hover { color: var(--text); }
 
     .hero {
-      padding: 5.5rem 0 2.4rem;
+      padding: 5.8rem 0 2.6rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.25fr 0.8fr;
       gap: 1.5rem;
       align-items: start;
     }
@@ -107,14 +108,14 @@
 
     h1 {
       margin: 0 0 1rem;
-      font-size: clamp(2.5rem, 5.4vw, 4.8rem);
+      font-size: clamp(2.6rem, 5.2vw, 4.7rem);
       line-height: 1.04;
       letter-spacing: -0.05em;
     }
 
     h2 {
       margin: 0 0 0.55rem;
-      font-size: clamp(1.45rem, 2.6vw, 2rem);
+      font-size: clamp(1.45rem, 2.6vw, 2.05rem);
       letter-spacing: -0.03em;
     }
 
@@ -140,7 +141,6 @@
     li + li { margin-top: 0.45rem; }
 
     .accent { color: var(--accent); }
-    .accent2 { color: var(--accent3); }
 
     .card {
       background: var(--panel);
@@ -148,8 +148,6 @@
       border-radius: 24px;
       box-shadow: var(--shadow);
     }
-
-    .panel { padding: 1.35rem; }
 
     .hero-card {
       padding: 1.25rem;
@@ -213,7 +211,7 @@
     section { padding: 1rem 0 1.1rem; }
 
     .section-card {
-      padding: 1.35rem;
+      padding: 1.45rem;
       background: var(--panel-2);
       border: 1px solid var(--border);
       border-radius: 24px;
@@ -333,6 +331,7 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
@@ -350,6 +349,7 @@
     <div class="container hero-grid">
       <div>
         <div class="pill">⭐ Flagship Case Study • Multi-Agent AI • Grounded Research</div>
+
         <h1>Building an <span class="accent">Agentic Research Intelligence Platform</span></h1>
 
         <p>
@@ -410,6 +410,7 @@
   <section>
     <div class="container section-card">
       <h2>The problem I wanted to solve</h2>
+
       <p>
         Simple RAG systems are useful, but I noticed they can struggle when the user asks a question that needs more than one step.
         Real research is not just search plus answer. A person usually breaks the question down, searches multiple places,
@@ -432,6 +433,7 @@
   <section>
     <div class="container section-card">
       <h2>Why I did not want to build another simple chatbot</h2>
+
       <p>
         I did not want this to be just a chat interface wrapped around an LLM.
         That kind of project may look good at first, but it does not show much engineering depth.
@@ -452,36 +454,19 @@
   <section>
     <div class="container section-card">
       <h2>System design</h2>
+
       <p>
         I designed the project as a multi-agent workflow. Each agent had one focused responsibility,
         which made the system easier to reason about.
       </p>
 
       <div class="flow">
-        <div class="node">
-          <strong>Planner Agent</strong>
-          Breaks the user question into smaller research steps.
-        </div>
-        <div class="node">
-          <strong>Search Agent</strong>
-          Finds candidate sources from the web.
-        </div>
-        <div class="node">
-          <strong>Scraper Agent</strong>
-          Extracts and cleans useful content from webpages.
-        </div>
-        <div class="node">
-          <strong>Retriever Agent</strong>
-          Embeds the content and retrieves the most relevant chunks.
-        </div>
-        <div class="node">
-          <strong>Writer Agent</strong>
-          Creates a grounded answer from retrieved evidence.
-        </div>
-        <div class="node">
-          <strong>Evaluator Agent</strong>
-          Checks whether the answer is relevant, complete, and supported.
-        </div>
+        <div class="node"><strong>Planner Agent</strong>Breaks the user question into smaller research steps.</div>
+        <div class="node"><strong>Search Agent</strong>Finds candidate sources from the web.</div>
+        <div class="node"><strong>Scraper Agent</strong>Extracts and cleans useful content from webpages.</div>
+        <div class="node"><strong>Retriever Agent</strong>Embeds the content and retrieves the most relevant chunks.</div>
+        <div class="node"><strong>Writer Agent</strong>Creates a grounded answer from retrieved evidence.</div>
+        <div class="node"><strong>Evaluator Agent</strong>Checks whether the answer is relevant, complete, and supported.</div>
       </div>
     </div>
   </section>
@@ -489,6 +474,7 @@
   <section>
     <div class="container section-card">
       <h2>What was harder than I expected</h2>
+
       <p>
         At the beginning, I thought most of the challenge would come from prompting.
         But while building the system, I realized retrieval quality mattered much more than I expected.
@@ -509,6 +495,7 @@
   <section>
     <div class="container section-card">
       <h2>Evaluation approach</h2>
+
       <p>
         I did not want to judge the system only by whether the answer sounded confident.
         I wanted to check whether the answer was actually grounded in retrieved information.
@@ -546,6 +533,7 @@
   <section>
     <div class="container section-card">
       <h2>Tradeoffs I had to think about</h2>
+
       <p>
         Multi-agent systems are powerful, but they are not free.
         More agents means more orchestration logic, more token usage, more latency,
@@ -585,23 +573,15 @@
   <section>
     <div class="container section-card">
       <h2>What I would improve next</h2>
+
       <p>
         If I continue developing this project further, I would focus on three areas.
       </p>
 
       <div class="flow">
-        <div class="node">
-          <strong>Observability</strong>
-          Add better logs and traces so every agent step can be inspected clearly.
-        </div>
-        <div class="node">
-          <strong>Latency</strong>
-          Add caching and asynchronous execution to reduce waiting time.
-        </div>
-        <div class="node">
-          <strong>Evaluation</strong>
-          Move from manual checks toward a more automated evaluation workflow.
-        </div>
+        <div class="node"><strong>Observability</strong>Add better logs and traces so every agent step can be inspected clearly.</div>
+        <div class="node"><strong>Latency</strong>Add caching and asynchronous execution to reduce waiting time.</div>
+        <div class="node"><strong>Evaluation</strong>Move from manual checks toward a more automated evaluation workflow.</div>
       </div>
     </div>
   </section>
@@ -609,6 +589,7 @@
   <section>
     <div class="container section-card">
       <h2>What this project taught me</h2>
+
       <p>
         This project changed how I think about AI applications.
         Before building it, I mostly thought about prompts, models, and outputs.
@@ -629,6 +610,7 @@
   <section>
     <div class="container section-card">
       <h2>More case studies coming soon</h2>
+
       <p>
         This is currently my flagship case study because it represents the project where I explored the deepest combination of
         retrieval, orchestration, evaluation, and system-level thinking.
