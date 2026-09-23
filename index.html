@@ -6,9 +6,42 @@
   <meta name="theme-color" content="#08130e" />
   <meta
     name="description"
-    content="Portfolio of Anish Tirumala Venkata, an AI/ML engineer and researcher working across Agentic AI, LLM systems, biomedical AI, retrieval, and reliable AI evaluation."
+    content="Portfolio of Anish Tirumala Venkata, an Applied AI Engineer building evaluated retrieval, agentic, machine-learning, and evidence-grounded AI systems."
   />
-  <title>Anish Tirumala Venkata | AI/ML Engineer & Researcher</title>
+  <meta name="author" content="Anish Tirumala Venkata" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anish Tirumala Venkata | Applied AI Engineer" />
+  <meta property="og:description" content="Evaluated AI systems across retrieval, agents, machine learning, APIs, and reliable deployment." />
+  <meta property="og:url" content="https://tvanish002.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="canonical" href="https://tvanish002.github.io/" />
+  <title>Anish Tirumala Venkata | Applied AI Engineer</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anish Tirumala Venkata",
+      "url": "https://tvanish002.github.io/",
+      "sameAs": [
+        "https://github.com/TVANISH002",
+        "https://www.linkedin.com/in/anish-tv"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Florida"
+      },
+      "knowsAbout": [
+        "Applied Artificial Intelligence",
+        "Machine Learning",
+        "Information Retrieval",
+        "Agentic AI",
+        "Retrieval-Augmented Generation",
+        "AI Evaluation"
+      ]
+    }
+  </script>
 
   <style>
     :root {
@@ -42,6 +75,11 @@
       scroll-behavior: smooth;
     }
 
+    ::selection {
+      color: #07110c;
+      background: var(--accent);
+    }
+
     body {
       min-height: 100vh;
       color: var(--text);
@@ -65,6 +103,35 @@
         linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
       background-size: 64px 64px;
       mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+
+    .scroll-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 100;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-strong), var(--accent), #b5f6ce);
+      box-shadow: 0 0 18px rgba(116, 230, 164, 0.45);
+      transition: width 80ms linear;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 200;
+      padding: 10px 14px;
+      color: #07110c;
+      border-radius: 10px;
+      background: var(--accent);
+      font-weight: 800;
+      transform: translateY(-160%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
 
     a {
@@ -190,6 +257,10 @@
       color: var(--text);
     }
 
+    .nav-links a.active:not(.nav-cta) {
+      color: var(--accent);
+    }
+
     .nav-cta {
       display: inline-flex;
       align-items: center;
@@ -311,6 +382,12 @@
         radial-gradient(circle at 50% 42%, rgba(116, 230, 164, 0.13), transparent 33%),
         rgba(11, 27, 18, 0.78);
       box-shadow: var(--shadow);
+      transform-style: preserve-3d;
+      transition: transform 220ms ease, border-color 220ms ease;
+    }
+
+    .system-card:hover {
+      border-color: var(--line-strong);
     }
 
     .system-card::after {
@@ -451,7 +528,9 @@
       padding: 30px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
-      background: linear-gradient(145deg, rgba(18, 39, 27, 0.8), rgba(10, 23, 16, 0.86));
+      background:
+        radial-gradient(circle at var(--spot-x, 86%) var(--spot-y, 8%), rgba(116, 230, 164, 0.11), transparent 28%),
+        linear-gradient(145deg, rgba(18, 39, 27, 0.8), rgba(10, 23, 16, 0.86));
       transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
     }
 
@@ -570,6 +649,33 @@
       color: var(--accent);
       font-size: 0.85rem;
       font-weight: 780;
+    }
+
+    .project-proof {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .proof-item {
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(3, 12, 7, 0.24);
+    }
+
+    .proof-item strong {
+      display: block;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    .proof-item span {
+      color: var(--muted-2);
+      font-size: 0.68rem;
     }
 
     .experience-layout {
@@ -985,6 +1091,10 @@
         margin-bottom: 36px;
       }
 
+      .project-proof {
+        grid-template-columns: 1fr;
+      }
+
       .education-card {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -1014,10 +1124,12 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <header class="nav-shell">
     <div class="container">
       <nav aria-label="Primary navigation">
-        <a class="brand" href="#top" aria-label="Anish Tirumala Venkata home">
+        <a class="brand" href="#main-content" aria-label="Anish Tirumala Venkata home">
           <span class="brand-mark">AT</span>
           <span>Anish Tirumala Venkata</span>
         </a>
@@ -1035,23 +1147,22 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content">
     <section class="container hero">
       <div class="hero-content reveal">
-        <div class="eyebrow">AI/ML Engineer · Agentic AI · Biomedical Research</div>
-        <h1>Building AI systems that are <span>grounded</span>, interpretable, and built to be trusted.</h1>
+        <div class="eyebrow">Applied AI Engineer · Retrieval · Agentic Systems</div>
+        <h1>Building AI systems that can be <span>measured</span>, traced, and trusted.</h1>
         <p class="hero-copy">
-          I work at the intersection of Agentic AI, Large Language Models, and biomedical research—building retrieval, evaluation, and ML systems that connect model reasoning with traceable evidence, reliable data, and production-oriented engineering.
+          I design evaluated AI systems across retrieval, machine learning, agent orchestration, APIs, and deployment—turning promising models into reliable engineering workflows with observable behavior and defensible results.
         </p>
 
-        <div class="research-focus" aria-label="Research interests">
-          <span class="research-pill">Artificial Intelligence</span>
+        <div class="research-focus" aria-label="Technical focus areas">
+          <span class="research-pill">Applied AI</span>
           <span class="research-pill">Machine Learning</span>
           <span class="research-pill">Agentic AI</span>
-          <span class="research-pill">Large Language Models</span>
-          <span class="research-pill">AI for Healthcare</span>
-          <span class="research-pill">Biomedical Informatics</span>
-          <span class="research-pill">Reliable &amp; Explainable AI</span>
+          <span class="research-pill">Information Retrieval</span>
+          <span class="research-pill">RAG Evaluation</span>
+          <span class="research-pill">Reliable AI</span>
         </div>
 
         <div class="hero-actions">
@@ -1062,7 +1173,7 @@
 
         <div class="availability">
           <span class="availability-dot" aria-hidden="true"></span>
-          Open to AI/ML research collaborations, and applied AI roles
+          Open to Applied AI, ML Engineering, Research Engineering, and forward-deployed AI roles
         </div>
       </div>
 
@@ -1093,8 +1204,8 @@
 
         <div class="core">
           <div>
-            <strong>Reliable AI</strong>
-            <small>Designed as a system</small>
+            <strong>Evaluated AI</strong>
+            <small>Evidence over intuition</small>
           </div>
         </div>
       </div>
@@ -1103,20 +1214,20 @@
     <section aria-label="Selected impact metrics">
       <div class="container metrics reveal">
         <div class="metric">
-          <strong>50+</strong>
-          <span>Experimental queries evaluated across retrieval and generation workflows</span>
+          <strong data-count="50" data-suffix="+">50+</strong>
+          <span>Experimental queries evaluated across agentic retrieval and generation workflows</span>
         </div>
         <div class="metric">
           <strong>68.5→80%</strong>
-          <span>Retrieval relevance improved through iterative tuning</span>
+          <span>Measured retrieval relevance improved through controlled experiments</span>
         </div>
         <div class="metric">
           <strong>−39%</strong>
-          <span>P95 API latency improvement through pipeline optimization</span>
+          <span>P95 inference latency through pipeline optimization</span>
         </div>
         <div class="metric">
-          <strong>10K+</strong>
-          <span>Operational records supported by validation workflows</span>
+          <strong data-count="10" data-suffix="K+">10K+</strong>
+          <span>Document chunks included in public retrieval evaluation</span>
         </div>
       </div>
     </section>
@@ -1125,55 +1236,64 @@
       <div class="container">
         <div class="section-header reveal">
           <div>
-            <div class="eyebrow">Selected work</div>
-            <h2 class="section-title">Research and engineering systems built around evidence, orchestration, and measurable outcomes.</h2>
+            <div class="eyebrow">Selected engineering work</div>
+            <h2 class="section-title">Systems that expose the experiment, not just the final answer.</h2>
           </div>
           <p class="section-copy">
-            A focused selection spanning biomedical AI research, enterprise retrieval, agentic systems, and evaluation-driven machine learning.
+            Public projects selected for technical depth: clear baselines, measurable improvements, inspectable architecture, and production-oriented delivery.
           </p>
         </div>
 
         <div class="work-grid">
           <article class="project-card project-featured reveal">
             <div class="card-topline">
-              <span class="card-kicker">Healthcare AI</span>
-              <span class="card-status">Current research</span>
+              <span class="card-kicker">Information retrieval</span>
+              <span class="card-status">Benchmark-driven</span>
             </div>
-            <h3>Evidence-grounded agentic AI for biomedical research</h3>
+            <h3>Applied Search &amp; Ranking System</h3>
             <p>
-              Contributing to biomedical AI research involving agentic workflows for evidence-grounded analysis of complex biological data. The work focuses on modular retrieval, structured reasoning, scientific evidence integration, reproducibility, and inspectable validation.
+              Built a controlled search evaluation workflow spanning sparse retrieval, dense retrieval, reciprocal-rank fusion, and reranking. The project separates retrieval quality from serving performance and supports reproducible, supervision-matched comparisons across ranking strategies.
             </p>
-            <div class="impact-note">Research implementation kept intentionally high-level to protect unpublished methodology.</div>
+            <div class="project-proof" aria-label="Applied search project proof points">
+              <div class="proof-item"><strong>BM25 + Dense</strong><span>Complementary retrieval</span></div>
+              <div class="proof-item"><strong>RRF</strong><span>Hybrid rank fusion</span></div>
+              <div class="proof-item"><strong>Reranking</strong><span>Precision-focused stage</span></div>
+            </div>
             <div class="project-footer">
-              <div class="tags" aria-label="Healthcare AI project technologies">
+              <div class="tags" aria-label="Search system technologies">
                 <span class="tag">Python</span>
-                <span class="tag">Agentic AI</span>
-                <span class="tag">Biomedical AI</span>
-                <span class="tag">Scientific Retrieval</span>
-                <span class="tag">Evidence Grounding</span>
-                <span class="tag">Evaluation</span>
+                <span class="tag">BM25</span>
+                <span class="tag">Dense Retrieval</span>
+                <span class="tag">RRF</span>
+                <span class="tag">Reranking</span>
+                <span class="tag">FastAPI</span>
               </div>
-              <span class="card-link">Private research work</span>
+              <span class="card-link">Case study in progress</span>
             </div>
           </article>
 
           <article class="project-card project-standard reveal">
             <div class="card-topline">
-              <span class="card-kicker">Azure RAG</span>
-              <span class="card-status">Applied system</span>
+              <span class="card-kicker">Evaluated RAG</span>
+              <span class="card-status">Public project</span>
             </div>
-            <h3>Internal grant intelligence assistant</h3>
+            <h3>ResearchGPT</h3>
             <p>
-              Developing an internal retrieval-augmented assistant over 3+ years of historical grant content using Azure AI Search, embeddings, section-aware chunking, metadata filtering, and hybrid retrieval—designed to surface funder-aligned context and reduce first-draft preparation effort.
+              A research-paper question-answering system designed to make retrieval measurable and debuggable. Controlled experiments improved measured relevance from 68.5% to 80.0%, with source attribution and latency tracing across retrieval and generation stages.
             </p>
+            <div class="project-proof" aria-label="ResearchGPT proof points">
+              <div class="proof-item"><strong>10K+</strong><span>Evaluated chunks</span></div>
+              <div class="proof-item"><strong>+11.5 pts</strong><span>Retrieval relevance</span></div>
+              <div class="proof-item"><strong>2-stage</strong><span>Latency tracing</span></div>
+            </div>
             <div class="project-footer">
-              <div class="tags" aria-label="Azure RAG project technologies">
-                <span class="tag">Azure OpenAI</span>
-                <span class="tag">Azure AI Search</span>
-                <span class="tag">Hybrid Retrieval</span>
+              <div class="tags" aria-label="ResearchGPT technologies">
+                <span class="tag">FAISS</span>
                 <span class="tag">FastAPI</span>
+                <span class="tag">Streamlit</span>
+                <span class="tag">Evaluation</span>
               </div>
-              <span class="card-link">Internal nonprofit system</span>
+              <a class="card-link" href="https://github.com/TVANISH002/ResearchGPT--Enterprise-RAG-AI-Assistant" target="_blank" rel="noreferrer">View repository <span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
@@ -1184,8 +1304,13 @@
             </div>
             <h3>Agentic Research Intelligence Platform</h3>
             <p>
-              Built a six-agent research workflow that separates planning, web discovery, content extraction, semantic retrieval, grounded writing, and evaluation. The architecture improves traceability and control by turning a single opaque generation step into a modular, inspectable system.
+              Built a modular research workflow that separates planning, discovery, extraction, retrieval, grounded synthesis, and evaluation. Tested across 50+ experimental queries to isolate retrieval and generation failures instead of treating the pipeline as one opaque step.
             </p>
+            <div class="project-proof" aria-label="Agentic platform proof points">
+              <div class="proof-item"><strong>50+</strong><span>Experimental queries</span></div>
+              <div class="proof-item"><strong>Modular</strong><span>Independently testable stages</span></div>
+              <div class="proof-item"><strong>Traceable</strong><span>Evidence-aware outputs</span></div>
+            </div>
             <div class="project-footer">
               <div class="tags" aria-label="Agentic research platform technologies">
                 <span class="tag">LangGraph</span>
@@ -1211,9 +1336,9 @@
       <div class="container experience-layout">
         <div class="experience-intro reveal">
           <div class="eyebrow">Experience</div>
-          <h2 class="section-title">Applied AI across biomedical research, retrieval systems, and production ML.</h2>
+          <h2 class="section-title">Research discipline paired with delivery-focused engineering.</h2>
           <p>
-            My work combines research thinking with implementation discipline: evidence retrieval, modular architecture, evaluation, data quality, backend integration, and reproducible experimentation.
+            My experience spans private scientific research, applied organizational AI, analytics, and operational leadership. Confidential work is described intentionally at a high level.
           </p>
         </div>
 
@@ -1224,7 +1349,7 @@
               <h3>Research Support Volunteer (AI/ML)</h3>
               <div class="role-company">University of Houston</div>
               <p>
-                Contributing to biomedical AI research using modular agent workflows for evidence-grounded analysis. Developing components for scientific retrieval, structured interpretation, provenance tracking, and evaluation, with emphasis on reproducible and transparent AI-assisted research workflows.
+                Contributing to private biomedical AI research involving structured evidence retrieval, uncertainty-aware reasoning, provenance, human review, and reproducible evaluation. Repository contents, datasets, unpublished results, and implementation details remain confidential.
               </p>
             </div>
           </article>
@@ -1235,7 +1360,7 @@
               <h3>Data Scientist / AI Engineer</h3>
               <div class="role-company">Street Care · Volunteer</div>
               <p>
-                Developing an Azure-based RAG assistant for grant workflows while building Python validation and reporting pipelines for operational data. Work spans retrieval design, hybrid search, metadata-aware context selection, evaluation, and data-quality automation across 10,000+ records.
+                Contributing to internal AI and data initiatives involving information retrieval, data quality, workflow automation, and Azure-based services. This work is covered by a confidentiality agreement; internal code, data, documents, architecture, and demonstrations are not public.
               </p>
             </div>
           </article>
@@ -1244,9 +1369,9 @@
             <div class="role-date">2024 — 2025</div>
             <div>
               <h3>Member Services Supervisor</h3>
-              <div class="role-company">University of Florida RecSports</div>
+              <div class="role-company">University of Florida RecSports · Operations &amp; Analytics</div>
               <p>
-                Used Python, Excel, and Power BI to clean attendance data, automate recurring reporting, and improve visibility into participation trends across programs and operations.
+                Combined frontline leadership with Python, Excel, and Power BI analysis to improve recurring reporting, data consistency, participation visibility, and operational planning across university recreation programs.
               </p>
             </div>
           </article>
@@ -1259,43 +1384,43 @@
         <div class="section-header reveal">
           <div>
             <div class="eyebrow">Capabilities</div>
-            <h2 class="section-title">A research-to-production stack for building reliable AI systems.</h2>
+            <h2 class="section-title">A practical stack for taking AI from experiment to dependable system.</h2>
           </div>
           <p class="section-copy">
-            From biomedical data analysis and scientific retrieval to agent orchestration, evaluation, APIs, cloud services, and deployment-oriented workflows.
+            Capabilities are organized around the work itself: retrieve useful evidence, orchestrate reasoning, evaluate failures, expose reliable services, and ship reproducible systems.
           </p>
         </div>
 
         <div class="capabilities">
           <article class="capability reveal">
             <span class="capability-number">01</span>
-            <h3>Agentic AI & LLM Systems</h3>
-            <p>Multi-agent workflows, tool calling, stateful orchestration, structured outputs, prompt design, human-in-the-loop patterns, and failure-aware control flows.</p>
+            <h3>Retrieval &amp; Ranking</h3>
+            <p>Sparse and dense retrieval, hybrid fusion, metadata filtering, reranking, chunking experiments, provenance, and query-level error analysis.</p>
           </article>
           <article class="capability reveal">
             <span class="capability-number">02</span>
-            <h3>Retrieval & Grounding</h3>
-            <p>Hybrid search, semantic retrieval, metadata filtering, chunking, re-ranking, vector databases, provenance, and retrieval-quality evaluation.</p>
+            <h3>Agentic AI &amp; LLM Systems</h3>
+            <p>Modular agent workflows, tool use, stateful orchestration, structured outputs, evidence-aware synthesis, and failure-conscious control flows.</p>
           </article>
           <article class="capability reveal">
             <span class="capability-number">03</span>
             <h3>Evaluation & Reliability</h3>
-            <p>Grounding checks, relevance and faithfulness evaluation, LLM-as-Judge workflows, benchmark design, ambiguity handling, logging, and measurable iteration.</p>
+            <p>Retrieval metrics, relevance and faithfulness analysis, grounding checks, benchmark design, ambiguity handling, latency profiling, and measurable iteration.</p>
           </article>
           <article class="capability reveal">
             <span class="capability-number">04</span>
             <h3>Backend Engineering</h3>
-            <p>FastAPI, REST services, Pydantic, modular Python, async workflows, data validation, error handling, and production-oriented application structure.</p>
+            <p>FastAPI, REST services, Pydantic, modular Python, asynchronous workflows, validation, error handling, observability, and testable application structure.</p>
           </article>
           <article class="capability reveal">
             <span class="capability-number">05</span>
-            <h3>ML & Biomedical Computing</h3>
-            <p>PyTorch, scikit-learn, Hugging Face, Pandas, NumPy, Scanpy, AnnData, statistical analysis, model evaluation, and biomedical data-analysis workflows.</p>
+            <h3>Machine Learning &amp; NLP</h3>
+            <p>scikit-learn, Hugging Face, Pandas, NumPy, classification, imbalanced learning, feature engineering, model evaluation, and NLP workflows.</p>
           </article>
           <article class="capability reveal">
             <span class="capability-number">06</span>
             <h3>Cloud & Delivery</h3>
-            <p>Azure OpenAI, Azure AI Search, AWS Bedrock, S3, Lambda, SageMaker, Docker, Kubernetes, GitHub Actions, CI/CD, and MLflow.</p>
+            <p>Azure AI services, AWS, Docker, GitHub Actions, CI/CD, environment-aware configuration, API delivery, and reproducible deployment workflows.</p>
           </article>
         </div>
 
@@ -1304,16 +1429,13 @@
           <span class="stack-item">LangGraph</span>
           <span class="stack-item">LangChain</span>
           <span class="stack-item">FastAPI</span>
-          <span class="stack-item">PyTorch</span>
           <span class="stack-item">Hugging Face</span>
           <span class="stack-item">Azure AI Search</span>
           <span class="stack-item">Qdrant</span>
           <span class="stack-item">FAISS</span>
-          <span class="stack-item">Pinecone</span>
+          <span class="stack-item">ChromaDB</span>
           <span class="stack-item">Docker</span>
-          <span class="stack-item">Kubernetes</span>
           <span class="stack-item">AWS</span>
-          <span class="stack-item">MLflow</span>
           <span class="stack-item">GitHub Actions</span>
           <span class="stack-item">Scanpy</span>
           <span class="stack-item">AnnData</span>
@@ -1360,7 +1482,7 @@
           <div class="eyebrow">Let’s connect</div>
           <h2>Interested in AI systems that can stand up to scrutiny?</h2>
           <p>
-            I am interested in research collaborations, and applied AI roles where agentic systems, biomedical AI, retrieval, evaluation, and trustworthy system design matter.
+            I am interested in Applied AI, Machine Learning, Research Engineering, and forward-deployed AI opportunities where retrieval, evaluation, system reliability, and measurable delivery matter.
           </p>
           <div class="contact-actions">
             <a class="button button-primary" href="https://www.linkedin.com/in/anish-tv" target="_blank" rel="noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
@@ -1373,7 +1495,7 @@
   </main>
 
   <footer class="container">
-    <span>© <span id="year">2026</span> Anish Tirumala Venkata · AI/ML Engineer &amp; Researcher</span>
+    <span>© <span id="year">2026</span> Anish Tirumala Venkata · Applied AI Engineer</span>
     <div class="footer-links">
       <a href="https://github.com/TVANISH002" target="_blank" rel="noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/anish-tv" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -1413,6 +1535,54 @@
 
     document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const progressBar = document.querySelector('.scroll-progress');
+    const navItems = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const sections = navItems
+      .map((item) => document.querySelector(item.getAttribute('href')))
+      .filter(Boolean);
+
+    const updatePageState = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progressBar.style.width = `${Math.min(progress, 100)}%`;
+
+      let activeSection = '';
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 180) activeSection = section.id;
+      });
+
+      navItems.forEach((item) => {
+        const active = item.getAttribute('href') === `#${activeSection}`;
+        item.classList.toggle('active', active);
+        if (active) item.setAttribute('aria-current', 'page');
+        else item.removeAttribute('aria-current');
+      });
+    };
+
+    window.addEventListener('scroll', updatePageState, { passive: true });
+    updatePageState();
+
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.querySelectorAll('.project-card').forEach((card) => {
+        card.addEventListener('pointermove', (event) => {
+          const bounds = card.getBoundingClientRect();
+          card.style.setProperty('--spot-x', `${event.clientX - bounds.left}px`);
+          card.style.setProperty('--spot-y', `${event.clientY - bounds.top}px`);
+        });
+      });
+
+      const systemCard = document.querySelector('.system-card');
+      systemCard.addEventListener('pointermove', (event) => {
+        const bounds = systemCard.getBoundingClientRect();
+        const rotateY = ((event.clientX - bounds.left) / bounds.width - 0.5) * 4;
+        const rotateX = ((event.clientY - bounds.top) / bounds.height - 0.5) * -4;
+        systemCard.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      systemCard.addEventListener('pointerleave', () => {
+        systemCard.style.transform = '';
+      });
+    }
   </script>
 </body>
 </html>
